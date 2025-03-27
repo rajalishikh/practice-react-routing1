@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AllFoodD from '../AllFoodDetails/AllFoodD';
+import "../FooDetails/FoodDetails.css";
 
 const AllFood = () => {
     const loader=useLoaderData()
@@ -9,9 +10,11 @@ const AllFood = () => {
     return (
         <div>
             <h2>Here is All Food</h2>
-            {
+           <div className='foodD'>
+           {
                 loader.meals.map(item=><AllFoodD item={item}></AllFoodD>)
             }
+           </div>
             
         </div>
     );

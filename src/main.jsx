@@ -8,6 +8,7 @@ import AllFood from './Component/ALlFood/AllFood';
 import Food from './Component/Food/Food';
 import FoodUnique from './Component/FoodUnique/FoodUnique';
 import Home from './Component/Home/Home';
+import OneAllFood from './Component/OneAllFood/OneAllFood';
 import './index.css';
 const router = createBrowserRouter([
   {
@@ -28,6 +29,12 @@ const router = createBrowserRouter([
         path:"/AllFood",
         loader:()=>fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a'),
         element:<AllFood></AllFood>
+      },
+      {
+        path:"/Unique/:UniqueId",
+        loader:({params})=>fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.UniqueId}`),
+        element:<OneAllFood></OneAllFood>
+
       }
     ]
   },
