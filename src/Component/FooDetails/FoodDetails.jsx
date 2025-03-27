@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./FoodDetails.css";
 
 const FoodDetails = ({item}) => {
@@ -10,6 +11,8 @@ const FoodDetails = ({item}) => {
            <p>Food menu number:{idCategory}</p>
            <p>Dish Name:{strCategory}</p>
            <p>Dish Details:{strCategoryDescription}</p>
+           <Link to={`/details/${idCategory}`}>Show Details</Link>
+           
             
         </div>
     );
